@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background: linear-gradient(115deg, #000000, #4e0101);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+    }
+
+    .container{
+      background:white;
+      padding:30px;
+      width:350px;
+      border-radius:10px;
+      box-shadow:0 0 10px rgba(0,0,0,0.2);
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:20px;
+      color:#333;
+    }
+
+    form{
+      display:flex;
+      flex-direction:column;
+    }
+
+    label{
+      margin-bottom:5px;
+      font-weight:bold;
+      color:#444;
+    }
+
+    input,
+    button{
+      padding:10px;
+      margin-bottom:15px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size:15px;
+    }
+
+    button{
+      background:#4e0101;
+      color:white;
+      border:none;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#000000;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Login</h1>
+
+    <form>
+      <label for="usuario">Usuário:</label>
+      <input type="text" id="usuario" placeholder="Digite o usuário">
+
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" placeholder="Digite a senha">
+
+      <button type="button" onclick="entrar()">
+        Entrar
+      </button>
+
+      <button type="button" onclick="limparLogin()">
+        Limpar
+      </button>
+    </form>
+  </div>
+
+  <script>
+    function entrar() {
+      let usuario = document.getElementById("usuario").value;
+      let senha = document.getElementById("senha").value;
+
+      if(usuario === "dudu" && senha === "4466") {
+
+        window.location.href = "cadastro.html";
+
+      } else {
+        alert("Usuário ou senha inválidos!");
+      }
+    }
+
+    function limparLogin() {
+      document.getElementById("usuario").value = "";
+      document.getElementById("senha").value = "";
+    }
+    
+  </script>
+
+</body>
+</html>
